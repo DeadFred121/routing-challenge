@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-
+import TopicsListItem from './TopicsListItem'
 
 const Topics = ({ match }) => (
   <div>
@@ -23,17 +23,13 @@ const Topics = ({ match }) => (
       </li>
     </ul>
 
-    <Route path={`${match.url}/:topicId`} component={Topic} />
+    <Route path={`${match.url}/:topicId`} component={TopicsListItem} />
     <Route exact path={match.url} render={() => (
       <h3>Please select a topic.</h3>
     )} />
   </div>
 )
 
-const Topic = ({ match }) => (
-  <div>
-    <h3>{match.params.topicId}</h3>
-  </div>
-)
+
 
 export default Topics
